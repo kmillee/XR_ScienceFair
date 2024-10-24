@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//to switch a light on/off and choose its color
 public class LightControl : MonoBehaviour
 {
     public GameObject btn_light;

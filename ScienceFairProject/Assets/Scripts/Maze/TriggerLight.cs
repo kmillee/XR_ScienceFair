@@ -1,79 +1,76 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;  // Nécessaire pour utiliser TextMeshPro
+using TMPro;
 
+//when triggered, this function change lights' color and scene music,
+//it also activates some textMesh so they only appear from this moment
 public class TriggerLight : MonoBehaviour
 {
-    public Light[] sceneLights;        // Tableau de lumières
-    public Color newLightColor;        // Nouvelle couleur pour toutes les lumières
+    public Light[] sceneLights;
+    public Color newLightColor;
 
+    //could be changed into an array to add as many texts as we like
     [SerializeField] TextMeshProUGUI textMeshPro1;
     [SerializeField] TextMeshProUGUI textMeshPro2;
     [SerializeField] TextMeshProUGUI textMeshPro3;
     [SerializeField] TextMeshProUGUI textMeshPro4;
 
-    public Color textColor = Color.white; // Couleur du texte (facultatif)
+    public Color textColor = Color.white;
 
-    private bool hasTriggered = false; // Pour vérifier si le trigger a déjà été activé
+    private bool hasTriggered = false; //get if trigger is already activated
 
     public AudioSource audioSource;
     public AudioClip clip1;
     public AudioClip clip2;
 
-    // Quand un objet entre dans le trigger
     private void OnTriggerEnter(Collider other)
     {
-        // Si l'objet qui entre dans le trigger a le tag "Player" (assure-toi que ton joueur est bien tagué)
         if (other.CompareTag("Player") && !hasTriggered)
         {
-            hasTriggered = true;  // Empêche le trigger de se réactiver
+            hasTriggered = true;  
 
-            // Changer la couleur de toutes les lumières
             ChangeLightsColor();
 
-            // Afficher le texte TextMeshPro
             ShowTextMeshPro();
 
+            //change music
             audioSource.clip = clip2;
             audioSource.Play();
         }
     }
 
-    // Fonction pour changer la couleur de toutes les lumières
     private void ChangeLightsColor()
     {
         foreach (Light light in sceneLights)
         {
-            if (light != null)  // Assure-toi que la lumière n'est pas nulle
+            if (light != null)  
             {
-                light.color = newLightColor;  // Changer la couleur de chaque lumière
+                light.color = newLightColor; 
             }
         }
     }
 
-    // Coroutine pour afficher les textes avec un léger délai
     private void ShowTextMeshPro()
     {
 
-            if (textMeshPro1 != null)  // Assure-toi que la lumière n'est pas nulle
+            if (textMeshPro1 != null) 
             {
                  textMeshPro1.gameObject.SetActive(true);
                  textMeshPro1.color = textColor;
             }
 
-        if (textMeshPro2!= null)  // Assure-toi que la lumière n'est pas nulle
-        {
+        if (textMeshPro2!= null)  {
             textMeshPro2.gameObject.SetActive(true);
             textMeshPro2.color = textColor;
         }
 
-        if (textMeshPro3 != null)  // Assure-toi que la lumière n'est pas nulle
+        if (textMeshPro3 != null) 
         {
             textMeshPro3.gameObject.SetActive(true);
             textMeshPro3.color = textColor;
         }
 
-        if (textMeshPro4 != null)  // Assure-toi que la lumière n'est pas nulle
+        if (textMeshPro4 != null)  
         {
             textMeshPro4.gameObject.SetActive(true);
             textMeshPro4.color = textColor;

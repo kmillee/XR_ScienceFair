@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//create an instance of a specified object
 public class Instanciate : MonoBehaviour
 {  
-    //ajout
+    //specify the spawn distance from the controller
     public float spawnDistance = 0.5f;
 
 
@@ -39,7 +40,7 @@ public class Instanciate : MonoBehaviour
 
             Vector3 instance_position = new Vector3();
             //instance_position = apearance_transform.position;
-            instance_position = apearance_transform.position + apearance_transform.forward * spawnDistance;     //apparaitre devant nous
+            instance_position = apearance_transform.position + apearance_transform.forward * spawnDistance;     //spawn in front of us
             GameObject parent = hierarchical_parent;
 
             if (hierarchical_parent != null)

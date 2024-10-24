@@ -3,7 +3,7 @@
 - Louis Guilloré
 
 ## Repository content
-This file contains :
+This repository contains :
 * a unity project
 * an .apk file of the project build
 * a link to a video recording of our project: [https://youtu.be/Apcb3fE25NQ](https://youtu.be/Apcb3fE25NQ))

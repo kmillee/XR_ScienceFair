@@ -2,6 +2,12 @@
 - Camille Jouanet
 - Louis Guilloré
 
+## Repository content
+This file contains :
+* a unity project
+* an .apk file of the project build
+* a link to a video recording of our project: [https://youtu.be/Apcb3fE25NQ](https://youtu.be/Apcb3fE25NQ))
+
 # Main parts of the projects
 ### We have 3 main exhibitions : The planetarium, the maze and the viscous experience.
 #### Our project is set up in a school's gymnasium, to simulate the "science fair" theme
